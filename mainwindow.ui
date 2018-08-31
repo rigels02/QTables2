@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>680</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="lblStatus">
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>status</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QListWidget" name="listWidget">
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string>Item 1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Item 2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Item 3</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="btnAdd">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/images/images/plus.png</normalon>
+         </iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnUpdate">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Update</string>
+        </property>
+        <property name="icon">
+         <iconset resource="icons.qrc">
+          <normaloff>:/images/images/edit.png</normaloff>:/images/images/edit.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnDelete">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+        <property name="icon">
+         <iconset resource="icons.qrc">
+          <normaloff>:/images/images/minus.png</normaloff>:/images/images/minus.png</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuImport_Export">
+     <property name="title">
+      <string>Import/Export</string>
+     </property>
+     <addaction name="actionImport_Old"/>
+     <addaction name="actionExport_Old"/>
+     <addaction name="actionImport_CSV"/>
+     <addaction name="actionExport_CSV"/>
+     <addaction name="actionImport_JSON"/>
+     <addaction name="actionExport_JSON"/>
+     <addaction name="separator"/>
+     <addaction name="actionInfo"/>
+    </widget>
+    <addaction name="menuImport_Export"/>
+    <addaction name="separator"/>
+    <addaction name="actionManage_Tables"/>
+    <addaction name="separator"/>
+    <addaction name="actionTablesMonthReport"/>
+    <addaction name="actionTable_Report"/>
+    <addaction name="separator"/>
+    <addaction name="actionSort_By_Date"/>
+    <addaction name="separator"/>
+    <addaction name="actionData_Filter"/>
+   </widget>
+   <addaction name="menuTools"/>
+  </widget>
+  <action name="actionManage_Tables">
+   <property name="text">
+    <string>Manage Tables</string>
+   </property>
+  </action>
+  <action name="actionTable_Report">
+   <property name="text">
+    <string>Table Report</string>
+   </property>
+  </action>
+  <action name="actionSort_By_Date">
+   <property name="text">
+    <string>Sort By Date</string>
+   </property>
+  </action>
+  <action name="actionData_Filter">
+   <property name="text">
+    <string>Data Filter</string>
+   </property>
+  </action>
+  <action name="actionTablesMonthReport">
+   <property name="text">
+    <string>Tables/Month Report</string>
+   </property>
+  </action>
+  <action name="actionImport_Old">
+   <property name="text">
+    <string>Import Old</string>
+   </property>
+  </action>
+  <action name="actionExport_Old">
+   <property name="text">
+    <string>Export Old</string>
+   </property>
+  </action>
+  <action name="actionImport_CSV">
+   <property name="text">
+    <string>Import CSV</string>
+   </property>
+  </action>
+  <action name="actionExport_CSV">
+   <property name="text">
+    <string>Export CSV</string>
+   </property>
+  </action>
+  <action name="actionImport_JSON">
+   <property name="text">
+    <string>Import JSON</string>
+   </property>
+  </action>
+  <action name="actionExport_JSON">
+   <property name="text">
+    <string>Export JSON</string>
+   </property>
+  </action>
+  <action name="actionInfo">
+   <property name="text">
+    <string>Info</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

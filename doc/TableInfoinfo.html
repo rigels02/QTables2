@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>TableInfo info</title>
+  </head>
+  <body>
+    <h2>Export / Import</h2>
+    <p>Every table has field (TableInfo field) containing DateTime stamp
+      when table has been updated.<br>
+      This field is useful to compare two tables, for example, two
+      tables table1 and table2 are equal if they have<br>
+      the same name and the same DateTime stamps.</p>
+    <p>When tables are exported by using old data format or CSV format,
+      then DateTime are not saved.<br>
+      Therefore, when those tables are imported, then the new DateTime
+      is assigned for every imported table.<br>
+      Only in case of importing tables from files in Json format the
+      saved there DateTime are restored for<br>
+      every table.<br>
+    </p>
+  </body>
+</html>
