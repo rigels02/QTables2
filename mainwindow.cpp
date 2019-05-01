@@ -37,6 +37,7 @@ MainWindow::MainWindow(QWidget *parent, IIOFile *repository) :
 #endif
    updateListView();
 
+  // qDebug()<<APP_VERSION;
 }
 
 QList<TableData> populateTestData(){
@@ -531,7 +532,7 @@ void MainWindow::on_actionInfo_triggered()
     QTextStream ts(&fi);
     ts.setCodec("UTF-8");
     QString report;
-    report = ts.readAll();
+    report = QString("APP VER.= ")+APP_VERSION+ts.readAll();
     fi.close();
     m_tr = new TableReportWindow(0,report);
     connect(m_tr,SIGNAL(tableReportReturn()),this,SLOT(on_tableReportReturn()));

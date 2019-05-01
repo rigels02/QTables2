@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/ImportOldTestBadRecords.txt</file>
+        <file>resources/ImportOldTestBadRecords_1.txt</file>
+        <file>resources/ImportOldTestBadRecords_2.txt</file>
+    </qresource>
+</RCC>
