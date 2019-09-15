@@ -1,5 +1,5 @@
-#ifndef MYEASYNOTESTEST_H
-#define MYEASYNOTESTEST_H
+#ifndef QTABLES2TEST_H
+#define QTABLES2TEST_H
 
 #include <QObject>
 #include <QtTest>
@@ -53,4 +53,4 @@ private slots:
 
 };
 
-#endif // MYEASYNOTESTEST_H
+#endif // QTABLES2TEST_H

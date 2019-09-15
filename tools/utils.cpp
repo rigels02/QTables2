@@ -43,25 +43,25 @@ QString Utils::PackItem(QStringList fld, int maxChars, QWidget *wdg){
  //int len= fld.size();
  QString sep=" ";
 QString pitem="";
-if(wdg==0){
+if(wdg==nullptr){
 pitem= fld.join(sep);
-pitem.trimmed();
+pitem = pitem.trimmed();
 while(pitem.length()<maxChars){
      sep.append(" ");
      pitem=fld.join(sep);
-     pitem.trimmed();
+     pitem = pitem.trimmed();
  }
  return pitem;
 }
 pitem=fld.join(sep);
-pitem.trimmed();
+pitem = pitem.trimmed();
 int w= wdg->geometry().width()-40;
 int sw=wdg->fontMetrics().width(pitem);
 
 while(sw<w){
     sep.append(" ");
     pitem=fld.join(sep);
-    pitem.trimmed();
+    pitem = pitem.trimmed();
     sw=wdg->fontMetrics().width(pitem);
 }
 return pitem;
@@ -70,7 +70,7 @@ QString Utils::PackItemJust(QStringList fld, int maxChars){
     QString sep=" ";
    QString pitem="";
    pitem= fld.join(sep);
-   pitem.trimmed();
+   pitem = pitem.trimmed();
    int spacecnt=1;
 
    while(pitem.length()<maxChars){
@@ -104,7 +104,7 @@ QString Utils::PackItemJust(QStringList fld, int maxChars){
   Get elements list for column by index colIdx
   */
 QStringList Utils::getColumnList(QVector<QStringList> *mtable, int colIdx){
-    if(mtable==0 || mtable->size()==0) return QStringList();
+    if(mtable==nullptr || mtable->size()==0) return QStringList();
     QVector<QString> vec(0);
     for(int i=0;i<mtable->size();i++){
     QString tmp=mtable->at(i).at(colIdx).trimmed();

@@ -7,7 +7,7 @@ SelectionWindow::SelectionWindow(QWidget *parent, IIOFile *repo) :
 {
     ui->setupUi(this);
     this->repo= repo;
-    if(repo==0) return;
+    if(repo==nullptr) return;
     updateWidgetList(repo->getTablesInfo());
     ui->dateEdit->setDate(QDate::currentDate());
     connect(ui->listWidget,SIGNAL(itemChanged(QListWidgetItem*)),this,SLOT(highlightChecked(QListWidgetItem*)));
@@ -71,7 +71,7 @@ void SelectionWindow::on_btnReport_clicked()
         report+=bi.printBilanceForTableAndMonth(i.value(),selDate.toString("MM/yyyy"));
     }
     //qDebug()<<report;
-    m_tr = new TableReportWindow(0,report);
+    m_tr = new TableReportWindow(nullptr,report);
     connect(m_tr,SIGNAL(tableReportReturn()),this,SLOT(on_tableReportReturn()));
     m_tr->setWindowTitle(selDate.toString("MM/yyyy")+" Report");
     m_tr->show();

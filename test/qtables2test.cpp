@@ -55,7 +55,7 @@ void QTables2Test::testSortByDate()
 
     mtable.setId(1);
     mtable.setName("Table_1");
-    mtable.setDate(QDate().currentDate());
+    mtable.setDate(QDateTime().currentDateTime());
 
     mtable.addData(TableData(QDate(2017,12,23),"Table_1Cat1",12.34,"Note_1"));
     mtable.addData(TableData(QDate(2017,3,28),"Table_1Cat2",22.34,"Note_2"));
@@ -73,7 +73,7 @@ void QTables2Test::testExpoCSV()
         MTable mtable;
         mtable.setId(1);
         mtable.setName(QString("Table_%1").arg(i));
-        mtable.setDate(QDate().currentDate());
+        mtable.setDate(QDateTime().currentDateTime());
 
         mtable.addData(TableData(QDate(2017,2,23),QString("Table_%1%2").arg(i).arg("Cat1"),12.34,"Note_1"));
         mtable.addData(TableData(QDate(2017,3,23),QString("Table_%1%2").arg(i).arg("Cat2"),22.34,"Note_2"));
@@ -123,7 +123,7 @@ QList<MTable> QTables2Test::makeTables(int num)
         MTable mtable;
         mtable.setId(1);
         mtable.setName(QString("Table_%1").arg(i));
-        mtable.setDate(QDate().currentDate());
+        mtable.setDate(QDateTime().currentDateTime());
 
         if(i != num){
         mtable.addData(TableData(QDate(2017,2,23),QString("Table_%1%2").arg(i).arg("Cat1"),12.34,"Note_1"));
@@ -142,7 +142,7 @@ QList<MTable> QTables2Test::makeTables_1(int num)
         MTable mtable;
         mtable.setId(1);
         mtable.setName(QString("Table_%1").arg(i));
-        mtable.setDate(QDate().currentDate());
+        mtable.setDate(QDateTime().currentDateTime());
 
         if(i != num){
         mtable.addData(TableData(QDate(2017,2,23),QString("Table_%1%2").arg(i).arg("Cat1"),12.34,""));
@@ -162,7 +162,7 @@ QList<MTable> QTables2Test::makeTables_2(int num)
             MTable mtable;
             mtable.setId(1);
             mtable.setName(QString("Table_%1").arg(i));
-            mtable.setDate(QDate().currentDate());
+            mtable.setDate(QDateTime().currentDateTime());
 
             if(i != num){
             mtable.addData(TableData(QDate(2017,2,23),QString("Table_%1%2").arg(i).arg("Cat1"),12.34,"Note_1,Delim"));
@@ -518,7 +518,7 @@ void QTables2Test::testSaveAllAndReadAll()
     for(int i=1; i<=3; i++){
         MTable table;
         table.setName(QString("Table_%0").arg(i));
-        table.setDate(QDate().currentDate());
+        table.setDate(QDateTime().currentDateTime());
         for(int d=1; d<= 3; d++){
             TableData data(QDate().currentDate(),
                            QString("Cat%0%1").arg(i).arg(d),
@@ -585,7 +585,7 @@ void QTables2Test::testDeleteAll()
     for(int i=1; i<=3; i++){
         MTable table;
         table.setName(QString("Table_%0").arg(i));
-        table.setDate(QDate().currentDate());
+        table.setDate(QDateTime().currentDateTime());
         for(int d=1; d<= 3; d++){
             TableData data(QDate().currentDate(),
                            QString("Cat%0%1").arg(i).arg(d),
@@ -614,7 +614,7 @@ void QTables2Test::testCreateTableWithDataThenUpdateLessData()
     for(int i=1; i<=1; i++){
         MTable table;
         table.setName(QString("Table_%0").arg(i));
-        table.setDate(QDate().currentDate());
+        table.setDate(QDateTime().currentDateTime());
         for(int d=1; d<= 3; d++){
             TableData data(QDate().currentDate(),
                            QString("Cat%0%1").arg(i).arg(d),

@@ -44,7 +44,8 @@ SOURCES += \
     expoimpo/old/impexp.cpp \
     csvexpoimpodlg.cpp \
     selectionwindow.cpp \
-    expoimpo/impoexpojson.cpp
+    expoimpo/impoexpojson.cpp \
+    tools/tablesfilter.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -67,7 +68,8 @@ HEADERS += \
     datasearchwindow.h \
     csvexpoimpodlg.h \
     selectionwindow.h \
-    expoimpo/impoexpojson.h
+    expoimpo/impoexpojson.h \
+    tools/tablesfilter.h
 
 FORMS += \
         mainwindow.ui \

@@ -30,7 +30,7 @@ void OldImpoExpoTest::testHi()
 QList<MTable> mtables0(){
     QList<MTable> tables;
     for(int i=1; i<= 3; i++){
-        TableInfo ti(0,QString("Table_%0").arg(i),QDate::currentDate());
+        TableInfo ti(0,QString("Table_%0").arg(i),QDateTime::currentDateTime());
         MTable table(ti);
 
       tables.append(table);
@@ -41,7 +41,7 @@ QList<MTable> mtables0(){
 QList<MTable> mtables1(int nodataIdx){
     QList<MTable> tables;
     for(int i=1; i<= 3; i++){
-        TableInfo ti(0,QString("Table_%0").arg(i),QDate::currentDate());
+        TableInfo ti(0,QString("Table_%0").arg(i),QDateTime::currentDateTime());
         MTable table(ti);
         if(i!= nodataIdx){
             for(int d=1; d<= 3; d++){
@@ -60,7 +60,7 @@ QList<MTable> mtables1(int nodataIdx){
 QList<MTable> mtables2(int nodataIdx){
     QList<MTable> tables;
     for(int i=1; i<= 3; i++){
-        TableInfo ti(0,QString("Table_%0").arg(i),QDate::currentDate());
+        TableInfo ti(0,QString("Table_%0").arg(i),QDateTime::currentDateTime());
         MTable table(ti);
         if(i!= nodataIdx){
             for(int d=1; d<= 3; d++){
@@ -79,7 +79,7 @@ QList<MTable> mtables2(int nodataIdx){
 QList<MTable> mtables3(int nodataIdx){
     QList<MTable> tables;
     for(int i=1; i<= 3; i++){
-        TableInfo ti(0,QString("Table_%0").arg(i),QDate::currentDate());
+        TableInfo ti(0,QString("Table_%0").arg(i),QDateTime::currentDateTime());
         MTable table(ti);
         if(i!= nodataIdx){
             for(int d=1; d<= 3; d++){

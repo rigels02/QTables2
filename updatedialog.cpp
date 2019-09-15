@@ -54,7 +54,7 @@ TableData UpdateDialog::fromForm() const
 
 void UpdateDialog::toForm(int selIdx)
 {
-    if(m_data==0) return;
+    if(m_data==nullptr) return;
     if(selIdx< 0 || selIdx> m_data->size()) return;
 
     QStringList catLst= categoryList();
@@ -97,7 +97,7 @@ void UpdateDialog::on_btnUpdate_clicked()
 QStringList UpdateDialog::categoryList() const
 {
     QStringList lst;
-     if(m_data==0) return lst;
+     if(m_data==nullptr) return lst;
     for(int i=0; i<m_data->size();i++){
         TableData el= m_data->at(i);
         if( !lst.contains(el.getCat(),Qt::CaseInsensitive)){
@@ -112,7 +112,7 @@ QStringList UpdateDialog::noteList() const
 {
     QString empty=" ";
     QStringList lst;
-     if(m_data==0) return lst;
+     if(m_data==nullptr) return lst;
      for(int i=0; i<m_data->size();i++){
          TableData el= m_data->at(i);
          QString note= el.getNote().trimmed();

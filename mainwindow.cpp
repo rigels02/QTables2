@@ -133,7 +133,7 @@ void MainWindow::addWidgetItems(const QList<TableData> &data)
     ui->listWidget->clear();
     int idx=0;
     foreach (TableData dd, data) {
-       QString stitle= makeItemString(dd);;
+       QString stitle= makeItemString(dd);
        QListWidgetItem* wi1 = new QListWidgetItem(stitle);
        //wi1->setData(Qt::UserRole,note.getId());
        if(!dd.getNote().isEmpty()){
@@ -182,7 +182,7 @@ void MainWindow::on_btnAdd_clicked()
         QMessageBox::information(this,"Info","Please, create table first!");
         return;
     }
-    UpdateDialog udlg(0,&data);
+    UpdateDialog udlg(nullptr,&data);
     udlg.setWindowTitle("Add record");
 #ifndef Q_OS_WIN
     udlg.showMaximized();
@@ -219,7 +219,7 @@ void MainWindow::on_btnUpdate_clicked()
     }
     int idx = ui->listWidget->currentIndex().row();
     if(idx< 0) return;
-    UpdateDialog udlg(0,&data);
+    UpdateDialog udlg(nullptr,&data);
     udlg.setWindowTitle(QString("Update record #%0").arg(idx+1));
 
 #ifndef Q_OS_WIN
@@ -314,7 +314,7 @@ void MainWindow::on_actionTable_Report_triggered()
 
     BilancePrint bp(tableName,&data,true);
     QString report = bp.printBilance();
-    m_tr = new TableReportWindow(0,report);
+    m_tr = new TableReportWindow(nullptr,report);
     connect(m_tr,SIGNAL(tableReportReturn()),this,SLOT(on_tableReportReturn()));
     m_tr->show();
 }
@@ -344,7 +344,7 @@ void MainWindow::on_actionSort_By_Date_triggered()
 
 void MainWindow::on_actionData_Filter_triggered()
 {
-    m_ds = new DataSearchWindow(0,&data);
+    m_ds = new DataSearchWindow(nullptr,&data);
     connect(m_ds,SIGNAL(DataSearchReturn()),this,SLOT(on_dataSearchReturn()));
     this->hide();
     m_ds->show();
@@ -453,7 +453,10 @@ void MainWindow::doExport(IExportImport<MTable> &expo){
            return;
        }
 
-       QMessageBox::information(this,"Export","Data export completed!",QMessageBox::Ok);
+       QMessageBox::information(this,
+                                "Export",
+                                QString("Data export completed to file %0!")
+                                .arg(filename.at(0)),QMessageBox::Ok);
 
    }
 
@@ -500,7 +503,8 @@ void MainWindow::doImport(IExportImport<MTable> &impo){
         this->currentTableId = ti.at(0).getId();
         storeSettings();
         QMessageBox::information(this,"Import",
-                                 "Data import completed!",
+                                 QString("Data import completed from file %0!")
+                                 .arg(filename[0]),
                                  QMessageBox::Ok);
 
       updateListView();

@@ -90,8 +90,8 @@ TableInfo IOFileImpl::createTable(QString name)
 const TableInfo* IOFileImpl::renameTable(int id, QString name)
 {
     TableInfo* ti = getInfo(id);
-    if(ti==0)
-        return 0;
+    if(ti==nullptr)
+        return nullptr;
     ti->setName(name);
     ti->setDate(QDateTime().currentDateTime());
     writeIdxFile();
@@ -203,7 +203,7 @@ TableInfo* IOFileImpl::getInfo(int tid){
             return &tablesInfo[i];
         }
     }
-    return 0;
+    return nullptr;
 }
 
 /**
@@ -249,7 +249,7 @@ void IOFileImpl::saveData(int tid, QList<TableData> data)
 {
     readIdxFile();
     TableInfo* tif= getInfo(tid);
-    if(tif==0)
+    if(tif==nullptr)
          throw "saveData():Wrong argument tid";
     tif->setDate(QDateTime().currentDateTime());
 
@@ -266,7 +266,7 @@ QList<TableData> IOFileImpl::loadData(int tid)
 {
     readIdxFile();
     TableInfo* tif= getInfo(tid);
-    if(tif==0)
+    if(tif==nullptr)
          throw "loadData():Wrong argument tid";
 
     QFile fi(composeFileName(tid));

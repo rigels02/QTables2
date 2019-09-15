@@ -84,7 +84,7 @@ void TManagerWindow::on_btnAdd_clicked()
 void TManagerWindow::on_btnRename_clicked()
 {
    QListWidgetItem *wi= ui->listWidget->currentItem();
-   if(wi == 0) return;
+   if(wi == nullptr) return;
    int idx= wi->data(Qt::UserRole).toInt();
    bool ok;
    QString ntable = QInputDialog::getText(this,"Rename Table","Table new name: ",QLineEdit::Normal,"",&ok);
@@ -101,7 +101,7 @@ void TManagerWindow::on_btnRename_clicked()
 void TManagerWindow::on_btnDelete_clicked()
 {
     QListWidgetItem *wi= ui->listWidget->currentItem();
-    if(wi == 0) return;
+    if(wi == nullptr) return;
     int idx= ui->listWidget->currentRow();
     int id= wi->data(Qt::UserRole).toInt();
     QList<TableInfo> tables = m_repo->getTablesInfo();
@@ -128,7 +128,7 @@ void TManagerWindow::on_btnDelete_clicked()
 void TManagerWindow::on_btnSelect_clicked()
 {
     QListWidgetItem *wi= ui->listWidget->currentItem();
-    if(wi == 0) return;
+    if(wi == nullptr) return;
     //int idx= ui->listWidget->currentRow();
     int id= wi->data(Qt::UserRole).toInt();
     currentTableId = id;

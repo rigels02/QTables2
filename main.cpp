@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     IOFileImpl repo;
-    MainWindow w(0,&repo);
+    MainWindow w(nullptr,&repo);
     w.show();
 
     return a.exec();
